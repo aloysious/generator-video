@@ -1,0 +1,12 @@
+
+<link href="<%= prefix %>/index-min.css" rel="stylesheet" />
+
+模块正文从这里开始
+
+<!--#include virtual="other-pages.html" -->
+
+<script>
+	KISSY.use('<%= packageName %>/<%= mojoName %>/index', function(S, <%= modName %>) {
+		new <%= modName %>();
+	});	
+</script>

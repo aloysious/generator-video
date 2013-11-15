@@ -1,0 +1,45 @@
+{
+  "name": "generator-video",
+  "version": "0.1.1",
+  "description": "A Clam generator for Yeoman",
+  "keywords": [
+    "yeoman-generator",
+	"clam",
+	"generator-video"
+  ],
+  "homepage": "https://github.com/aloysious/generator-video",
+  "bugs": "https://github.com/aloysious/generator-video/issues",
+  "author": {
+    "name": "shouzuo",
+    "email": "aloysious.ld@taobao.com",
+    "url": "https://github.com/aloysious"
+  },
+  "readmeFilename": "README.md",
+  "_from": "generator-video@",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aloysious/generator-video.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "abc-generator": "~0.0.3",
+    "yeoman-generator": "~0.13.3",
+	"flex-combo":"~0.3.7",
+	"jayli-server":""
+
+  },
+  "devDependencies": {
+    "mocha": "~1.10.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+
+<!--如不参与combohtml，可忽略此句-->
+<script src="<%= srcPath %><%= mojoName %>/index.js"></script>
+<link href="<%= srcPath %><%= mojoName %>/index.css" rel="stylesheet" />
+
+模块正文从这里开始
+
+<!--#include virtual="other-pages.html" -->
+
+<script>
+	KISSY.use('<%= packageName %>/<%= mojoName %>/index', function(S, <%= modName %>) {
+		new <%= modName %>();
+	});	
+</script>
