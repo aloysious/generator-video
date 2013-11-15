@@ -1,7 +1,7 @@
 {
     "name": "<%= packageName %>",
     "desc": "description of your app",
-    "type": "clam",
+    "type": "video",
 	"group":"<%= groupName %>",
 	"version":"<%= version %>",
 	"config":"<%= config %>",
