@@ -185,6 +185,7 @@ ClamGenerator.prototype.app = function app() {
 	this.mkdir('doc');
 	this.mkdir('build');
 	this.template('abc.json');
+	this.template('ServiceHelper.js', 'src/service/ServiceHelper.js');
 };
 
 function consoleColor(str,num){
