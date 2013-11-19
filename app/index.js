@@ -123,7 +123,7 @@ ClamGenerator.prototype.askFor = function askFor() {
         {
             name: 'groupName',
             message: 'Group Name:',
-            default: 'video',
+            default: 'de',
             warning: ''
         },
 		{
