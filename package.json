@@ -1,6 +1,6 @@
 {
   "name": "generator-video",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Clam generator for Yeoman",
   "keywords": [
     "yeoman-generator",
