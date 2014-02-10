@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             options: {
                 packages: [
                     {
-                        name: '<%= packageName %>',
+                        name: '<%= pkg.name %>',
                         path: './src/',
 						charset:'utf-8',
 						ignorePackageNameInUri:true

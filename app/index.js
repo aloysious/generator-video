@@ -161,7 +161,7 @@ ClamGenerator.prototype.askFor = function askFor() {
 };
 
 ClamGenerator.prototype.gruntfile = function gruntfile() {
-	this.template('Gruntfile_src.js','Gruntfile.js');
+	this.copy('Gruntfile_src.js', 'Gruntfile.js');
 };
 
 ClamGenerator.prototype.packageJSON = function packageJSON() {
