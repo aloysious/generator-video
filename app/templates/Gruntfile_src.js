@@ -51,9 +51,10 @@ module.exports = function (grunt) {
             options: {
                 packages: [
                     {
-                        name: '',
-                        path: 'src/',
-						charset:'utf-8'
+                        name: '<%= packageName %>',
+                        path: './src/',
+						charset:'utf-8',
+						ignorePackageNameInUri:true
                     }
                 ],
 				depFilePath: 'src/mod.js',
