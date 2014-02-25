@@ -59,6 +59,7 @@ module.exports = function (grunt) {
                 ],
 				depFilePath: 'src/mod.js',
 				comboMap: true,
+				fixModuleName: true,
 				comboOnly: true
             },
 
