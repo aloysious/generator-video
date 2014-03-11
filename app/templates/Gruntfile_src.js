@@ -241,22 +241,7 @@ module.exports = function (grunt) {
 			uitl: {
 				command: 'yo clam:widget'
 			}
-		},
-
-		toascii: {
-			main: {
-				files:[
-					{
-						expand:true,
-						src: ['**/*.js', '**/*.css', '!**/*-min.js', '!**/*-min.css'], 
-						dest: 'build/', 
-						cwd:'build/',
-						filter: 'isFile'
-					}
-				]
-			}
 		}
-
 
     });
 
@@ -271,7 +256,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-flexcombo');
 	grunt.loadNpmTasks('grunt-exec');
-	grunt.loadNpmTasks('grunt-toascii');
 	
 	// 这部分根据实际需要打开
 	//grunt.loadNpmTasks('grunt-combohtml');
@@ -310,7 +294,7 @@ module.exports = function (grunt) {
 
 	// 默认构建任务
 	grunt.registerTask('build', '默认构建任务', function() {
-		task.run(['clean:build', 'kmc', 'less', 'copy', /*'replace', */'toascii', 'uglify', 'cssmin']);
+		task.run(['clean:build', 'kmc', 'less', 'copy', /*'replace', */'uglify', 'cssmin']);
 	});
 
 	/*
