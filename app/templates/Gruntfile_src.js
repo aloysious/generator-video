@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 			// 此时可以通过在页面url后面带?ks-debug来控制是否访问压缩后的文件和是否combo
 			stage:{
 				options:{
-					longPulling: true,
+					longPolling: true,
 					target:'build/',
 					urls:'/<%= pkg.group %>/<%= pkg.name %>/<%= pkg.version %>',
 					port:'<%= pkg.port %>',
@@ -136,7 +136,7 @@ module.exports = function (grunt) {
 			// 只访问压缩前的源文件，?ks-debug只能控制是否combo
 			dev:{
 				options:{
-					longPulling: true,
+					longPolling: true,
 					target:'src/',
 					urls:'/<%= pkg.group %>/<%= pkg.name %>/<%= pkg.version %>',
 					port:'<%= pkg.port %>',
