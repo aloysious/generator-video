@@ -1,10 +1,10 @@
 /**
  * @fileOverview 辅助Service模块.
  * @author  liesun.wjb@taobao.com
- * @date    2013.11.13
+ * @date    2014.05.19 v2
  */
 
-KISSY.add('<%= packageName %>/service/servicehelper', function(S, IO){
+KISSY.add('<%= packageName %>/service/servicehelper', function(S, Event, IO){
 
 'use strict';
 
@@ -89,13 +89,18 @@ S.augment(F, S.EventTarget, {
             dataType: reqUrl.indexOf('.htm') === -1 ? 'json' : 'jsonp'
         }, cfg);
         
+        if(config.autoAdjustUrl != false && this.isDevEnvr()){
+            var reg = /^\s*(https?):\/\/(\w+)\.(\w+)\.com\//i;
+            config.url = config.url.replace(reg, '$1://$2.daily.$3.net/');
+        }
+        
         config.success = function(o){
             var checkSuccess = config.checkSuccess;
             var eventData, eventName, getEventData;
             
             if(S.isFunction(checkSuccess)){
                 if(!checkSuccess(o)){
-                    error(o);
+                    onerror(o);
                     return;
                 }
             }
@@ -168,10 +173,31 @@ S.augment(F, S.EventTarget, {
             params.push(k + '=' + encodeURIComponent(v));
         });
         return url + '?' + params.join('&');
+    },
+    
+    /**
+     * 检测是否处于调试环境
+     * @return {Boolean}
+     * @private
+     */
+    isDevEnvr : function(){
+        var host = location.hostname;
+        return (
+              host == 'g.tbcdn.cn'
+           || host == 'a.tbcdn.cn'
+           || host == 'localhost'
+           || host == '127.0.0.1'
+           || host.indexOf('.daily.') != -1
+		   // tms预发
+		   || host.indexOf('.tms.') != -1
+		   // awp日常
+		   || host.indexOf('.waptest.') != -1
+		   // awp预发
+		   || host.indexOf('.wapa.') != -1
+        );        
     }
 });
 
 return F;
 
-}, {requires: ['io']});
- 
+}, {requires: ['event', 'io']});
